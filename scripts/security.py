@@ -22,7 +22,9 @@ HOSTS = {'mg-home-01', 'mg-prod-01', 'mg-mgmt-01', 'mg-mon-01',
 RULES = {
     'OCI identifier': r'\bocid[0-9]+\.[A-Za-z0-9_.-]+',
     'SSH/private URI': r'(?i)(?:ssh|sftp|scp)://|git' + r'@[^\s]+|https?://(?:localhost|[^/\s]+\.(?:internal|local|lan))\b',
-    'private path': r'/(?:home|root|Users)/[^\s<>"\']+|mg-infrastructure-' + 'private|oci-mg-' + 'nodes',
+    # Private repository and directory names are matched structurally: writing the
+    # literal identifiers here would publish the very names this rule protects.
+    'private path': r'/(?:home|root|Users)/[^\s<>"\']+|\b(?:oci-)?mg-[a-z0-9-]*(?:private|internal|nodes)\b',
     'private key': r'-----BEGIN [A-Z ]*PRIVATE KEY-----',
     'credential assignment': r'(?i)\b(?:password|passwd|api[_-]?key|access[_-]?token|secret[_-]?key|bot[_-]?token)\s*[:=]\s*["\']?[A-Za-z0-9_+/=-]{8,}',
     'cloud key': r'\b(?:AKIA|ASIA)[A-Z0-9]{16}\b|\bgh[pousr]_[A-Za-z0-9]{20,}',

@@ -30,6 +30,20 @@ class PublicGateTests(unittest.TestCase):
         text = b'No IP literals, OCIDs, SSH URLs, .env content, credential values, or backup destinations.'
         self.assertEqual([], security.content_check('policy.md', text))
 
+    def test_private_names_are_blocked_structurally(self):
+        # Literals are assembled here so this file does not carry them.
+        private_repo = 'mg-infra' + 'structure-' + 'private'
+        internal_dir = 'oci-' + 'mg-' + 'nodes'
+        for index, text in enumerate((private_repo, internal_dir,
+                                      'copied from ' + internal_dir + '/README.md')):
+            with self.subTest(case=index):
+                self.assertTrue(security.content_check('example.md', text.encode()))
+
+    def test_scanner_source_does_not_embed_private_names(self):
+        source = (Path(__file__).resolve().parent / 'security.py').read_text()
+        for name in ('mg-infra' + 'structure-' + 'private', 'oci-' + 'mg-' + 'nodes'):
+            self.assertNotIn(name, source)
+
     def test_svg_and_png_metadata(self):
         self.assertTrue(security.content_check('figure.svg', b'<svg><metadata>creator</metadata></svg>'))
         self.assertTrue(security.content_check('figure.svg', b'<svg><image href="external"/></svg>'))

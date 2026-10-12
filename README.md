@@ -2,9 +2,9 @@
 
 A self-hosted, multi-cloud infrastructure built with Docker, Tailscale and centralized observability.
 
-**4 Nodes / 27 Containers / 3 Locations**
+**4 Nodes / 3 Locations**
 
-Docker process count snapshot, 2026-10-12 local time: home 3, production 18, management 3, monitoring 3. Locations denote three placement contexts: home mini PC (Rome), IONOS production VPS, and OCI Milan. Counts are a dated snapshot, not real-time metrics.
+Locations denote three placement contexts: home mini PC (Rome), IONOS production VPS, and OCI Milan.
 
 Production applications run on IONOS, management and monitoring run on separate OCI micro VMs, and home services join the same private administration network.
 

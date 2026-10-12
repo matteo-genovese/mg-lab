@@ -36,7 +36,7 @@ make check-history
 
 `check-diagrams` renders every SVG and the PNG to a fresh temporary directory, compares file inventory and bytes to the checked-in candidates, and deletes the temporary directory. It does not depend on commits or Git history. XML parsing checks SVG root, viewBox dimensions, nonempty text labels, and size; `lint` invokes D2 validation on all seven sources. rsvg-convert version differences may affect PNG bytes: use the same version when reviewing a render change.
 
-`make security` also runs 27 regression tests covering address/credential patterns, metadata, category false positives, changed unapproved labels, prohibited paths (including hidden directories in ZIP/no-Git trees and caches), symlinks, and per-committed-tree review manifests in isolated temporary repositories.
+`make security` also runs 29 regression tests covering address/credential patterns, metadata, category false positives, changed unapproved labels, prohibited paths (including hidden directories in ZIP/no-Git trees and caches), symlinks, and per-committed-tree review manifests in isolated temporary repositories.
 
 Changing a diagram requires inspecting the output, rerunning all checks, and explicitly reviewing the updated content hashes under the public redaction policy. Byte equality verifies reproducibility, not topology truth or visual quality.
 

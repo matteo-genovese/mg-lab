@@ -2,7 +2,7 @@
 
 This portfolio documents four hosts: mg-home-01 (home mini PC, Rome), mg-prod-01 (IONOS production VPS), and mg-mgmt-01 / mg-mon-01 (OCI Milan management and monitoring micro VMs). Home, IONOS, and OCI Milan are three placement contexts; no exact city is assigned to IONOS.
 
-Documentation is current to **2026-10-12**. The supplied Docker process count snapshot that morning recorded **3 / 18 / 3 / 3**, respectively, for **27 running containers**. Containers are not Portainer endpoints.
+Documentation is current to **2026-10-12**. Container counts are not published here: a dated figure would be stale within days and carries no architectural information. Containers are not Portainer endpoints.
 
 The supplied source observations were taken on **2026-10-11 at 21:16/21:17 UTC**, or **23:16/23:17 CEST** that same day. They establish software placement and configuration, including Portainer Server and Beszel Hub on management, Uptime Kuma on monitoring, Pi-hole at home, and Backrest on production. Compose, Tailscale, separate Caddy ingress, personal services, and the backup staging/dump design also use owner-supplied architectural context; they are not fresh health measurements.
 

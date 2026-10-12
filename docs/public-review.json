@@ -1,11 +1,11 @@
 {
   "source": "Supplied public architecture context, source observations, local Docker count snapshot, and owner dashboard observation. Dates and screenshot provenance are recorded in docs/scope.md.",
-  "review": "Local v4 review comprised AI-assisted editorial/source review and visual QA, plus automated D2, link, security and temporary Git regression checks. These checks do not constitute owner approval. Final owner approval is pending before publication.",
+  "review": "Local v4 review: content reviewed with AI assistance under owner direction against the supplied public allowlist and observed facts, plus automated D2 render/lint, link, security and temporary Git regression checks. These checks do not constitute owner approval. Final owner approval is pending before publication.",
   "files": {
     ".gitignore": "b3f0384d259ee99d312fc2a6f5c15e7510914aa00690e84961cef8c803051a77",
     "LICENSE": "d611564dbca0f8f153def2a6f3804aefaa1b8d6390f1a3831cd987e8657e9587",
     "Makefile": "4c6f314f7208ef76fea780ce08e5d8c8ca332248b19bb60b82df502a0b13e1f3",
-    "README.md": "d4ea715e89308cbcac6c53520cc6fa3313f0e383f937014b6e03605bb15426fb",
+    "README.md": "99c9d39702726568fb9a73b08db86cc906ee137b84f8265ee53a6d9710e97f5f",
     "diagrams/rendered/backup-dataflow.svg": "a211136d3f8e4df8bd5ab0649990974b3753c2b88a7d1a0e6e41cb922f18775f",
     "diagrams/rendered/future-architecture.svg": "b0bd0beee266f6b0e164493b6a8e7693aeb0feb422fe8c3c0b733fc13710dda7",
     "diagrams/rendered/infrastructure-overview-dark.svg": "976b489debfd6263177c939acc269b4d2e06f2fa29bce653312bca954a57dc11",
@@ -30,14 +30,14 @@
     "docs/adr/005-oci-micro-tradeoff.md": "1921c2c71f2b221ac7cba64d25fb3726658f304ba7fa9c87692e67b6e2296d42",
     "docs/adr/006-backup-evidence.md": "ccfebf917a54d5e7ffaf72cbb02d455b628f12412600b18245505a7afda98061",
     "docs/adr/README.md": "77a7379542e130dab2533dfda9bb41f87b3189af2bdede2351c6c594a966731c",
-    "docs/diagrams.md": "1c0a85184a29e2e028e49f763398719573ee4751750f805fb12ffacb85c63a59",
+    "docs/diagrams.md": "735b938dfc933f7ce11f85a9d92a95c0666da18d2c308160537a30b6d20975e6",
     "docs/lessons-learned.md": "ffbf4e306d8eff56310d6233601547af92575c8b2716db7bf953ea09664eacd3",
     "docs/publishing-proposal.md": "3878158e976b74564da5f95a4391d60e50b1b1d5ab0a7c0dfe32bffb342b0af5",
     "docs/redaction-policy.md": "78dba7215512c8f98bf375313d727a42df41b8ce9c27216a9bc6c9b6603b192c",
     "docs/roadmap.md": "6a8f6dddea4900cd6ad0c5f1728924ee611c2422596414c0a696738c856c2f8b",
-    "docs/scope.md": "98d574854d8c9a9174f8c9b2a395066fb8b53ded561ac323b9552492d753cd9b",
+    "docs/scope.md": "65b5bd83a79a22d3702e0c7f17739233dbf5e203b9314e198901fab93ec97cb7",
     "scripts/diagrams.py": "2ea0a0e8316c9642fa447bb19a8ab2d39aa7738a8ab50e02a64f045d15a734d3",
-    "scripts/security.py": "6e9e8b1890c91a683d73b9023fe69280d7e830cd71206256adfbd34c5530712e",
-    "scripts/test_security.py": "4d9093b4d19f80b9d0cf3b0bf58fecd14dff2cedf36589758a44275113dbcce4"
+    "scripts/security.py": "a51e539f084e8ce0f2a495ad3dc83848d32cecdf645b8dbdaea211af5536d3ab",
+    "scripts/test_security.py": "4873aeaf1eb90ec9c798683ce912e9ac0cdf06926c3e171647db48d20f04d7a0"
   }
 }

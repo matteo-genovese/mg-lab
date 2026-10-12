@@ -36,7 +36,7 @@ Portainer centrally manages four Docker environments over a private Tailscale ne
 
 ## Explore and improve
 
-- [Six architecture decisions](docs/adr/README.md) and [lessons learned](docs/lessons-learned.md)
+- [Seven architecture decisions](docs/adr/README.md) and [lessons learned](docs/lessons-learned.md)
 - [Roadmap](docs/roadmap.md): telemetry validation, alert delivery tests, recovery exercises, capacity measurement, and planned K3s / ARM / logging experiments
 - [Network](diagrams/rendered/network-topology.svg), [management](diagrams/rendered/management-architecture.svg), [monitoring](diagrams/rendered/monitoring-alerting.svg), and [workload](diagrams/rendered/services-workloads.svg) views
 - [Seven D2 sources and reproducible builds](docs/diagrams.md), [public redaction policy](docs/redaction-policy.md), and [future publishing proposal](docs/publishing-proposal.md)

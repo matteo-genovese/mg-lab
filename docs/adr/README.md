@@ -6,3 +6,4 @@
 - [004 · Keep Compose; evaluate K3s experimentally](004-compose-before-k3s.md)
 - [005 · Bound the OCI micro VM role](005-oci-micro-tradeoff.md)
 - [006 · Document backup evidence before recovery claims](006-backup-evidence.md)
+- [007 · Authenticate the origin leg that serves customer domains](007-authenticated-origin-leg.md)

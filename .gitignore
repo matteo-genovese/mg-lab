@@ -1,0 +1,27 @@
+# Local credentials and operational exports
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+*.tfstate*
+*.tfvars
+secrets/
+.aws/
+.ssh/
+.agents/
+.codex/
+local/
+exports/
+audit/
+private/
+backups/
+*.dump
+*.sql
+*.log
+__pycache__/
+.venv/
+site/
+.DS_Store

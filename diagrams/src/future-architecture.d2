@@ -1,0 +1,38 @@
+direction: right
+vars: {d2-config: {layout-engine: elk; theme-id: 0}}
+**.style.font-size: 24
+**.style.font-color: "#0f172a"
+**.style.border-radius: 12
+classes: {
+  default: {style: {fill: "#f1f5f9"; stroke: "#475569"; font-color: "#0f172a"; font-size: 24; border-radius: 12}}
+  control: {style.fill: "#ede9fe"; style.stroke: "#7c3aed"}
+  monitor: {style.fill: "#d1fae5"; style.stroke: "#047857"}
+  overlay: {style.fill: "#ccfbf1"; style.stroke: "#0f766e"}
+  caveat: {style.fill: "#fef3c7"; style.stroke: "#b45309"}
+  planned: {style.fill: "#fef3c7"; style.stroke: "#b45309"; style.stroke-dash: 6}
+  public: {style.stroke: "#047857"; style.stroke-width: 3; style.font-size: 24; style.font-color: "#0f172a"}
+  private: {style.stroke: "#0f766e"; style.stroke-width: 3; style.stroke-dash: 6; style.font-size: 24; style.font-color: "#0f172a"}
+  flow: {style.stroke: "#475569"; style.stroke-width: 2; style.font-size: 24; style.font-color: "#0f172a"}
+  uncertain: {style.stroke: "#b45309"; style.stroke-dash: 6; style.font-size: 24; style.font-color: "#0f172a"}
+}
+current: "Current baseline" {
+  class: default
+  prod: "IONOS · mg-prod-01\nDocker Compose" {class: default}
+  control: "OCI micro VMs\nSeparate management / monitoring" {class: control}
+}
+planned: "Planned only" {
+  class: planned
+  arm: "Planned · mg-prod-02\nEvaluate OCI ARM capacity" {class: planned}
+  k3s: "Planned · K3s experiment\nWith IONOS · benefit to demonstrate" {class: planned}
+  logs: "Planned · mg-logs-01\nEvaluate centralized logging" {class: planned}
+}
+current -> planned.arm: "Capacity evaluation" {class: uncertain}
+current -> planned.k3s: "Orchestration experiment" {class: uncertain}
+current -> planned.logs: "Logging evaluation" {class: uncertain}
+
+legend: "Dashed amber nodes / arrows are planned · no production K3s or HA claim\nSlate: hosts / data · teal: administration\nPurple: management · green: monitoring · amber: planned / gaps\nDashed: logical, planned or unverified relationships (see labels)" {
+  shape: text
+  near: bottom-center
+  style.font-size: 22
+  style.font-color: "#0f172a"
+}

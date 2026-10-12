@@ -1,0 +1,45 @@
+direction: right
+vars: {d2-config: {layout-engine: elk; theme-id: 0}}
+**.style.font-size: 24
+**.style.font-color: "#0f172a"
+**.style.border-radius: 12
+classes: {
+  default: {style: {fill: "#f1f5f9"; stroke: "#475569"; font-color: "#0f172a"; font-size: 24; border-radius: 12}}
+  control: {style.fill: "#ede9fe"; style.stroke: "#7c3aed"}
+  monitor: {style.fill: "#d1fae5"; style.stroke: "#047857"}
+  overlay: {style.fill: "#ccfbf1"; style.stroke: "#0f766e"}
+  caveat: {style.fill: "#fef3c7"; style.stroke: "#b45309"}
+  planned: {style.fill: "#fef3c7"; style.stroke: "#b45309"; style.stroke-dash: 6}
+  public: {style.stroke: "#047857"; style.stroke-width: 3; style.font-size: 24; style.font-color: "#0f172a"}
+  private: {style.stroke: "#0f766e"; style.stroke-width: 3; style.stroke-dash: 6; style.font-size: 24; style.font-color: "#0f172a"}
+  flow: {style.stroke: "#475569"; style.stroke-width: 2; style.font-size: 24; style.font-color: "#0f172a"}
+  uncertain: {style.stroke: "#b45309"; style.stroke-dash: 6; style.font-size: 24; style.font-color: "#0f172a"}
+}
+estate: "Current roles · generic workload groups" {
+  class: default
+  grid-columns: 2
+  grid-gap: 50
+  ionos: "IONOS · mg-prod-01" {
+    class: default
+    stack: "Docker Compose applications\nNPM · separate Caddy ingress*\nSelected PostgreSQL data*\nBackrest · Watchtower · Homepage*\nPortainer / Beszel agents" {class: default; width: 430; height: 240}
+  }
+  oci: "OCI · Milan" {
+    class: default
+    grid-rows: 2
+    grid-gap: 35
+    mgmt: "mg-mgmt-01 · management\nPortainer Server · Beszel Hub\nBeszel agent" {class: control; width: 430; height: 140}
+    mon: "mg-mon-01 · monitoring\nUptime Kuma\nPortainer / Beszel agents" {class: monitor; width: 430; height: 140}
+  }
+  home: "Home · mg-home-01" {
+    class: default
+    stack: "Pi-hole · Portainer / Beszel agents\nPersonal services*\nSynchronization · voice tooling\nSome services run outside Docker*" {class: default; width: 430; height: 190}
+  }
+  context: "* Owner-supplied design context\nNot a current health measurement\nGeneric application groups" {class: caveat; width: 430; height: 160}
+}
+
+legend: "Placement by role; boxes do not imply one Compose stack\nSlate: workloads · purple: management · green: monitoring · amber: design context" {
+  shape: text
+  near: bottom-center
+  style.font-size: 22
+  style.font-color: "#0f172a"
+}

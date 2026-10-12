@@ -1,0 +1,36 @@
+direction: right
+vars: {d2-config: {layout-engine: elk; theme-id: 0}}
+**.style.font-size: 24
+**.style.font-color: "#0f172a"
+**.style.border-radius: 12
+classes: {
+  default: {style: {fill: "#f1f5f9"; stroke: "#475569"; font-color: "#0f172a"; font-size: 24; border-radius: 12}}
+  control: {style.fill: "#ede9fe"; style.stroke: "#7c3aed"}
+  monitor: {style.fill: "#d1fae5"; style.stroke: "#047857"}
+  overlay: {style.fill: "#ccfbf1"; style.stroke: "#0f766e"}
+  caveat: {style.fill: "#fef3c7"; style.stroke: "#b45309"}
+  planned: {style.fill: "#fef3c7"; style.stroke: "#b45309"; style.stroke-dash: 6}
+  public: {style.stroke: "#047857"; style.stroke-width: 3; style.font-size: 24; style.font-color: "#0f172a"}
+  private: {style.stroke: "#0f766e"; style.stroke-width: 3; style.stroke-dash: 6; style.font-size: 24; style.font-color: "#0f172a"}
+  flow: {style.stroke: "#475569"; style.stroke-width: 2; style.font-size: 24; style.font-color: "#0f172a"}
+  uncertain: {style.stroke: "#b45309"; style.stroke-dash: 6; style.font-size: 24; style.font-color: "#0f172a"}
+}
+agents: "Deployed software · documented hosts" {
+  class: default
+  portainer: "Portainer agents\nHome · production · monitoring" {class: control}
+  beszel: "Beszel agents\nHome · production\nManagement · monitoring" {class: control}
+}
+oci: "OCI · mg-mgmt-01" {
+  class: default
+  server: "Portainer Server\nFour Docker environments\nOwner dashboard: four endpoints Up" {class: control}
+  hub: "Beszel Hub\nLogical telemetry relationship" {class: control}
+}
+agents.portainer -> oci.server: "Remote management\nPrivate Tailscale network" {class: private}
+agents.beszel -> oci.hub: {class: private}
+
+legend: "Purple: deployed management software · slate: host groups\nPortainer: private management · Beszel: logical telemetry" {
+  shape: text
+  near: bottom-center
+  style.font-size: 26
+  style.font-color: "#0f172a"
+}

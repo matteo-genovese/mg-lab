@@ -1,6 +1,6 @@
 # Roadmap
 
-All work below is planned. OCI ARM, K3s, and centralized logging are not deployed.
+All work below is planned validation or exploration. The owner reports a deployed observability console with centralized logs as of 2026-10-18; ARM cloud capacity and K3s remain planned.
 
 | Priority | Improvement | Completion criterion |
 | --- | --- | --- |
@@ -9,9 +9,11 @@ All work below is planned. OCI ARM, K3s, and centralized logging are not deploye
 | First | Test alert delivery | Observe a controlled notification at its intended destination |
 | First | Define backup coverage and exercise capture | Demonstrate that required data is included in a successful snapshot |
 | First | Perform an isolated recovery exercise | Restore required data and verify application behavior |
-| Next | Measure OCI micro VM headroom | Use CPU/memory trends to make a capacity decision |
-| Explore | Evaluate mg-prod-02 on OCI ARM | Assess compatibility, capacity, cost, and rollback |
-| Explore | Experiment with K3s and IONOS | Demonstrate operational benefit relative to Compose |
-| Explore | Evaluate mg-logs-01 centralized logging | Demonstrate useful queries within an access and storage budget |
+| Next | Measure cloud micro VM headroom | Use CPU/memory trends to make a capacity decision |
+| Explore | Evaluate mg-prod-02 on ARM cloud capacity | Assess compatibility, capacity, cost, and rollback |
+| Explore | Experiment with K3s on the public VPS | Demonstrate operational benefit relative to Compose |
+| First | Validate console collection and tune alert thresholds | Demonstrate useful log queries and collection from every node; tune initial thresholds against a baseline |
+| First | Exercise independent witness and console access fallback | Observe a console failure signal, measure its delay, and test direct access during a proxy failure |
+| First | Validate proxy blocking and rollback | Confirm CDN allowlisting and client attribution, rejection of invalid configuration, and manual block-list clearing |
 
 A future cluster needs its own resilience design and validation before any HA claim. See the [planned architecture](../diagrams/rendered/future-architecture.svg).

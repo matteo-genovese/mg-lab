@@ -20,13 +20,13 @@ agents: "Deployed software · documented hosts" {
   portainer: "Portainer agents\nHome · production · monitoring" {class: control}
   beszel: "Beszel agents\nHome · production\nManagement · monitoring" {class: control}
 }
-oci: "OCI · mg-mgmt-01" {
+cloud: "CLOUD · mg-mgmt-01" {
   class: default
   server: "Portainer Server\nFour Docker environments\nOwner dashboard: four endpoints Up" {class: control}
   hub: "Beszel Hub\nLogical telemetry relationship" {class: control}
 }
-agents.portainer -> oci.server: "Remote management\nPrivate Tailscale network" {class: private}
-agents.beszel -> oci.hub: {class: private}
+agents.portainer -> cloud.server: "Remote management\nPrivate Tailscale network" {class: private}
+agents.beszel -> cloud.hub: {class: private}
 
 legend: "Purple: deployed management software · slate: host groups\nPortainer: private management · Beszel: logical telemetry" {
   shape: text

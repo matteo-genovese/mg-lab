@@ -8,7 +8,7 @@ Production uses Docker Compose. There is no production K3s deployment.
 
 ## Decision
 
-Retain Compose for simple operation; evaluate a planned K3s experiment with IONOS and planned OCI ARM capacity separately.
+Retain Compose for simple operation; evaluate a planned K3s experiment on the public VPS and planned ARM cloud capacity separately.
 
 ## Consequences
 

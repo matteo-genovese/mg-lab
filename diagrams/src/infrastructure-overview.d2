@@ -29,25 +29,25 @@ access: "" {
   tailnet: "Tailscale · admin plane" {class: overlay; width: 380; height: 64}
   admin -> tailnet: {class: private}
 }
-ionos: "IONOS / PRODUCTION" {
+vps: "PRODUCTION · PUBLIC VPS" {
   class: group
   prod: "mg-prod-01\nProduction VPS\nCompose · app ingress" {class: host; width: 320; height: 125}
 }
-home: "HOME / ROME" {
+home: "HOME" {
   class: group
   node: "mg-home-01\nMini PC\nPi-hole · local services" {class: host; width: 320; height: 125}
 }
-oci: "OCI / MILAN · MICRO VMs" {
+cloud: "CLOUD · MICRO VMs" {
   class: group
   mgmt: "mg-mgmt-01\nManagement VM\nPortainer · Beszel Hub" {class: control; width: 320; height: 125}
   mon: "mg-mon-01\nMonitoring VM\nUptime Kuma" {class: monitor; width: 320; height: 125; style.font-color: "#ffffff"}
 }
-internet -> ionos.prod: "Public applications" {class: public}
+internet -> vps.prod: "Public applications" {class: public}
 # Arrowless peer links: ELK direction is a layout constraint.
-access.tailnet -> ionos.prod: {class: private; target-arrowhead.shape: none}
+access.tailnet -> vps.prod: {class: private; target-arrowhead.shape: none}
 access.tailnet -> home.node: {class: private; target-arrowhead.shape: none}
-access.tailnet -> oci.mgmt: {class: private; target-arrowhead.shape: none}
-access.tailnet -> oci.mon: {class: private; target-arrowhead.shape: none}
+access.tailnet -> cloud.mgmt: {class: private; target-arrowhead.shape: none}
+access.tailnet -> cloud.mon: {class: private; target-arrowhead.shape: none}
 legend: "Blue → public apps  ·  Teal ┄ admin peers  ·  Purple management  ·  Green monitoring\nPlacement + overlay ≠ access control" {
   shape: text
   near: bottom-center

@@ -17,18 +17,17 @@ classes: {
 }
 current: "Current baseline" {
   class: default
-  prod: "IONOS · mg-prod-01\nDocker Compose" {class: default}
-  control: "OCI micro VMs\nSeparate management / monitoring" {class: control}
+  prod: "PUBLIC VPS · mg-prod-01\nDocker Compose" {class: default}
+  control: "Cloud nodes\nManagement / independent witness" {class: control}
+  console: "Home observability console\nCentralized metrics and logs" {class: monitor}
 }
 planned: "Planned only" {
   class: planned
-  arm: "Planned · mg-prod-02\nEvaluate OCI ARM capacity" {class: planned}
-  k3s: "Planned · K3s experiment\nWith IONOS · benefit to demonstrate" {class: planned}
-  logs: "Planned · mg-logs-01\nEvaluate centralized logging" {class: planned}
+  arm: "Planned · mg-prod-02\nEvaluate ARM cloud capacity" {class: planned}
+  k3s: "Planned · K3s experiment\nOn the public VPS · benefit to demonstrate" {class: planned}
 }
 current -> planned.arm: "Capacity evaluation" {class: uncertain}
 current -> planned.k3s: "Orchestration experiment" {class: uncertain}
-current -> planned.logs: "Logging evaluation" {class: uncertain}
 
 legend: "Dashed amber nodes / arrows are planned · no production K3s or HA claim\nSlate: hosts / data · teal: administration\nPurple: management · green: monitoring · amber: planned / gaps\nDashed: logical, planned or unverified relationships (see labels)" {
   shape: text

@@ -1,10 +1,10 @@
-# 005 · Bound the OCI micro VM role
+# 005 · Bound the micro VM role
 
 Status: **Accepted**
 
 ## Context
 
-Management and monitoring each use small OCI AMD VMs in Milan.
+Management and monitoring each use small AMD micro VMs.
 
 ## Decision
 

@@ -4,7 +4,7 @@ Status: **Accepted**
 
 ## Context
 
-Production runs on IONOS; management and monitoring run on separate OCI AMD micro VMs. Home remains a local-services node.
+Production runs on the public VPS; management and monitoring run on separate AMD micro VMs. Home remains a local-services node.
 
 ## Decision
 

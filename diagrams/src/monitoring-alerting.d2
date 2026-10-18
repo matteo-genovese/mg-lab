@@ -15,21 +15,22 @@ classes: {
   flow: {style.stroke: "#475569"; style.stroke-width: 2; style.font-size: 24; style.font-color: "#0f172a"}
   uncertain: {style.stroke: "#b45309"; style.stroke-dash: 6; style.font-size: 24; style.font-color: "#0f172a"}
 }
-checks: "Check types\nConceptual grouping" {
+agents: "Collection agents on every node\nFour hosts · conceptual grouping" {class: monitor}
+home: "Home node" {
   class: default
-  http: "HTTP checks\nApplication availability" {class: monitor}
-  ping: "Ping checks\nHost response" {class: monitor}
+  console: "One observability console\nMetrics · searchable logs\nAlert rules · initial thresholds" {class: monitor}
 }
-oci: "OCI · mg-mon-01" {
+separate: "Separate host" {
   class: default
-  kuma: "Uptime Kuma\nSeparate monitoring VM" {class: monitor}
+  witness: "Independent synthetic witness\nAvailability checks\nDelayed console-failure signal" {class: monitor}
 }
-notification: "Configured notifications\nDelivery test planned" {class: caveat}
-checks.http -> oci.kuma: "Availability" {class: flow}
-checks.ping -> oci.kuma: {class: flow}
-oci.kuma -> notification: "Association only" {class: uncertain}
+notification: "Logical alert delivery path\nDelivery test planned" {class: caveat}
+agents -> home.console: "Metrics and logs" {class: flow}
+separate.witness -> home.console: "Synthetic availability check" {class: flow}
+home.console -> notification: "Rule notifications" {class: uncertain}
+separate.witness -> notification: "Independent failure signal" {class: uncertain}
 
-legend: "Green: monitoring · slate: check relationships · amber: notification validation\nDashed amber: configured association; delivery test planned\nSeparate VM, shared OCI location" {
+legend: "Green: observability · slate: collection / checks\nDashed amber: notification path; delivery unverified\nOwner-supplied design · no security correlation" {
   shape: text
   near: bottom-center
   style.font-size: 26

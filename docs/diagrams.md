@@ -7,9 +7,9 @@ Seven native D2 sources in `diagrams/src` produce nine SVGs and one hero PNG in 
 | infrastructure-overview | Four hosts grouped by provider/home; direct public production ingress and logical administration overlay |
 | network-topology | Public application path, private administration peers, local DNS; no access-policy observations |
 | management-architecture | Four Docker environments Up in the owner dashboard observation; logical Beszel telemetry |
-| monitoring-alerting | HTTP/ping relationships and configured notification association; no delivery claim |
-| services-workloads | Generic software groups by host, with owner-supplied design context marked separately |
-| future-architecture | Dashed amber planned capacity, K3s experiment, and logging |
+| monitoring-alerting | Console, collection agents on every node, separate synthetic witness, and logical notification paths; no delivery claim |
+| services-workloads | Generic workload groups by host; detection and blocking roles have unspecified placement |
+| future-architecture | Current home console; dashed amber planned capacity and K3s experiment |
 | backup-dataflow | Conceptual collection, snapshot mechanism, and planned recovery validation; no schedules or destinations |
 
 ## Visual system and semantics

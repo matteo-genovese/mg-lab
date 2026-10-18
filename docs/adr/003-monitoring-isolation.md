@@ -4,7 +4,7 @@ Status: **Accepted**
 
 ## Context
 
-Portainer and Beszel share the management VM; Kuma runs on another OCI VM.
+Portainer and Beszel share the management VM; Kuma runs on another cloud VM.
 
 ## Decision
 
@@ -12,7 +12,7 @@ Keep availability checks on a separate monitoring VM.
 
 ## Consequences
 
-Management VM failure need not remove monitoring. Both nodes still share OCI location and limited micro VM capacity. Configured notifications do not establish delivery; a controlled alert exercise is planned.
+Management VM failure need not remove monitoring. Both nodes still share a cloud location and limited micro VM capacity. Configured notifications do not establish delivery; a controlled alert exercise is planned.
 
 ## Alternative considered
 

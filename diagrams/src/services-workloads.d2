@@ -19,25 +19,29 @@ estate: "Current roles · generic workload groups" {
   class: default
   grid-columns: 2
   grid-gap: 50
-  ionos: "IONOS · mg-prod-01" {
+  public_host: "Public VPS" {
     class: default
-    stack: "Docker Compose applications\nNPM · separate Caddy ingress*\nSelected PostgreSQL data*\nBackrest · Watchtower · Homepage*\nPortainer / Beszel agents" {class: default; width: 430; height: 240}
+    stack: "Application workloads\nThe proxy · proxy block list\nCollection agent\nTest configuration before reload" {class: default; width: 480; height: 200}
   }
-  oci: "OCI · Milan" {
+  cloud: "Cloud nodes" {
     class: default
     grid-rows: 2
     grid-gap: 35
-    mgmt: "mg-mgmt-01 · management\nPortainer Server · Beszel Hub\nBeszel agent" {class: control; width: 430; height: 140}
-    mon: "mg-mon-01 · monitoring\nUptime Kuma\nPortainer / Beszel agents" {class: monitor; width: 430; height: 140}
+    mgmt: "Management node\nManagement workloads\nCollection agent" {class: control; width: 480; height: 160}
+    mon: "Separate witness node\nIndependent synthetic checks\nCollection agent" {class: monitor; width: 480; height: 160}
   }
-  home: "Home · mg-home-01" {
+  home: "Home node" {
     class: default
-    stack: "Pi-hole · Portainer / Beszel agents\nPersonal services*\nSynchronization · voice tooling\nSome services run outside Docker*" {class: default; width: 430; height: 190}
+    stack: "One observability console\nMetrics · searchable logs · alert rules\nCollection agent · local workloads" {class: monitor; width: 480; height: 180}
   }
-  context: "* Owner-supplied design context\nNot a current health measurement\nGeneric application groups" {class: caveat; width: 430; height: 160}
+  edge: "Detection and blocking roles\nPlacement not specified" {
+    class: default
+    detection: "Detection produces events\nCentral event service" {class: control; width: 480; height: 120}
+    blocking: "Proxy block-list enforcement\nAllowlist the CDN before blocking\nManual rollback remains available" {class: default; width: 480; height: 160}
+  }
 }
 
-legend: "Placement by role; boxes do not imply one Compose stack\nSlate: workloads · purple: management · green: monitoring · amber: design context" {
+legend: "Owner-supplied design · no current health measurement\nPlacement by role; boxes do not imply one deployed stack\nSlate: workloads · purple: control · green: observability" {
   shape: text
   near: bottom-center
   style.font-size: 22

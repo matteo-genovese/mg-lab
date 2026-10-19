@@ -25,6 +25,7 @@ Production applications run on the public VPS. Management and the independent sy
 | Portainer | Central Docker management | Provides one management view for the four documented environments |
 | Beszel | Central host telemetry | Separates resource visibility from application deployment |
 | Uptime Kuma | HTTP and ping availability checks | Keeps the availability signal on a separate monitoring VM |
+| Grafana, Loki, Prometheus | Observability console | Keeps metrics, log search and alert rules in one self-hosted stack on the node with spare capacity |
 | Backrest | Backup capture mechanism | Separates data collection and snapshot capture from recovery validation |
 
 Portainer centrally manages four Docker environments over a private Tailscale network. The owner's management dashboard showed all four endpoints Up; recovery testing remains future work.

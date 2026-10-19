@@ -23,7 +23,7 @@ The console's rules and the independent witness each have a logical notification
 - The console's access name depends on the host acting as the proxy. If that host fails, direct address access remains available, but access by name does not.
 - A failure of the console itself is detected only by the out-of-band witness, with a delay. No measured detection time is claimed.
 - This is not a security correlation system; operators search the logs manually.
-- Alert thresholds retain their initial values and have not been tuned against a baseline.
+- Alert thresholds retain their initial values and have not been tuned against a baseline. **Superseded 2026-10-19:** [ADR 010](010-thresholds-from-a-measured-baseline.md) replaces this with thresholds sized from a measured baseline.
 - Centralizing the heavy components makes home-node availability a dependency for the console.
 
 ## Evidence boundary

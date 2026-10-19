@@ -3,7 +3,7 @@
   <img width="360" alt="mg-lab" src="assets/mg-lab-light.svg">
 </picture>
 
-# MG Infrastructure
+# mg-lab
 
 A self-hosted, multi-cloud infrastructure built with Docker, Tailscale and centralized observability.
 
@@ -39,13 +39,13 @@ Portainer centrally manages four Docker environments over a private Tailscale ne
 
 **Design backups around recovery.** The design collects node data and selected database dumps into a production staging tree for Backrest capture. Collection, capture, and restoration are separate stages: a backup mechanism is not tested recovery. Coverage review and an isolated restore exercise are the next milestones. [Backup flow](diagrams/rendered/backup-dataflow.svg) · [ADR 006](docs/adr/006-backup-evidence.md)
 
-**One console, an outside witness.** Metrics, searchable logs, and alert rules share a self-hosted console on the home node. An independent synthetic witness stays on a separate host. Proxy-dependent access by name, delayed console-failure detection, manual log searches, and untuned thresholds remain accepted limits. [ADR 008](docs/adr/008-single-observability-console.md)
+**One console, an outside witness.** Metrics, searchable logs, and alert rules share a self-hosted console on the home node. An independent synthetic witness stays on a separate host. Proxy-dependent access by name, delayed console-failure detection, and manual log searches remain accepted limits. [ADR 008](docs/adr/008-single-observability-console.md) **Observed, 2026-10-19:** Alert thresholds now use a measured baseline. **Unverified, 2026-10-19:** Its representativeness beyond the measured window remains unverified. [ADR 010](docs/adr/010-thresholds-from-a-measured-baseline.md)
 
 **Block through the proxy without root.** Detection feeds central events; enforcement writes an inspectable block list and reloads only after a successful configuration test. Allowlist the CDN network before any blocking. This limits application and log load, not bandwidth saturation. [ADR 009](docs/adr/009-proxy-edge-blocking.md)
 
 ## Explore and improve
 
-- [Nine architecture decisions](docs/adr/README.md) and [lessons learned](docs/lessons-learned.md)
+- [Ten architecture decisions](docs/adr/README.md) and [lessons learned](docs/lessons-learned.md)
 - [Roadmap](docs/roadmap.md): telemetry and observability validation, alert delivery tests, recovery exercises, capacity measurement, and planned K3s / ARM experiments
 - [Network](diagrams/rendered/network-topology.svg), [management](diagrams/rendered/management-architecture.svg), [monitoring](diagrams/rendered/monitoring-alerting.svg), and [workload](diagrams/rendered/services-workloads.svg) views
 - [Seven D2 sources and reproducible builds](docs/diagrams.md), [public redaction policy](docs/redaction-policy.md), and [future publishing proposal](docs/publishing-proposal.md)

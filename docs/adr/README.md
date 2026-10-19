@@ -9,3 +9,4 @@
 - [007 · Authenticate the origin leg that serves customer domains](007-authenticated-origin-leg.md)
 - [008 · One observability console, with an independent witness](008-single-observability-console.md)
 - [009 · Block at the edge without host root privileges](009-proxy-edge-blocking.md)
+- [010 · Choose alert thresholds from a measured baseline](010-thresholds-from-a-measured-baseline.md)

@@ -2,7 +2,7 @@
 
 This portfolio documents four hosts: mg-home-01 (home mini PC), mg-prod-01 (production VPS), and mg-mgmt-01 / mg-mon-01 (management and monitoring micro VMs). Home, the public VPS and the cloud nodes are three placement contexts.
 
-Documentation is current to **2026-10-18**. Container counts are not published here: a dated figure would be stale within days and carries no architectural information. Containers are not Portainer endpoints.
+Documentation is current to **2026-10-19**. Container counts are not published here: a dated figure would be stale within days and carries no architectural information. Containers are not Portainer endpoints.
 
 The supplied source observations were taken on **2026-10-11 at 21:16/21:17 UTC**, or **23:16/23:17 CEST** that same day. They establish software placement and configuration, including Portainer Server and Beszel Hub on management, Uptime Kuma on monitoring, Pi-hole at home, and Backrest on production. Compose, Tailscale, separate Caddy ingress, personal services, and the backup staging/dump design also use owner-supplied architectural context; they are not fresh health measurements.
 
@@ -11,6 +11,8 @@ The owner provided a Portainer dashboard screenshot showing all **four documente
 ## Decisions supplied on 2026-10-18
 
 The owner reports one self-hosted observability console for metrics, logs, and alert rules on the home node, lightweight collection agents on every node, and an independent synthetic witness on a separate host. The owner also reports edge detection feeding central events and proxy-based blocking without host root privileges. The [console decision](adr/008-single-observability-console.md) and [blocking decision](adr/009-proxy-edge-blocking.md) record alternatives, constraints, and accepted limits. These statements extend the earlier observations; no private configuration or live host was consulted. Collection completeness, capacity, failure behavior, delivery, source attribution, and blocking remain independently unverified.
+
+**Observed, 2026-10-19:** The owner reports that console alert thresholds no longer use default values: they were chosen by measuring normal network noise. A second rule targets a single persistent source rather than traffic spread across sources. The [baseline decision](adr/010-thresholds-from-a-measured-baseline.md) records the method; operational measurements remain in the private repository. The owner also reports one successful notification delivery test. These are supplied observations, not independently exercised results. **Unverified, 2026-10-19:** The measurement covers only one 24-hour window.
 
 ## Reading the architecture
 

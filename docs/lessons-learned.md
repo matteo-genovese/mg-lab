@@ -6,6 +6,7 @@
 4. **Simple orchestration has a ceiling.** Compose reduces operational complexity, but one production host remains a single point of failure. A planned K3s experiment must justify its maintenance cost and address data recovery separately.
 5. **Validate access boundaries deliberately.** Tailscale provides private administration connectivity; its presence alone does not guarantee Internet isolation.
 6. **Exercise the alert path.** Configured notifications do not establish delivery. A controlled test should demonstrate that a useful signal reaches its destination.
+   **Observed, 2026-10-19:** Console thresholds now use measured background noise, with a separate rule for a persistent source; see [ADR 010](adr/010-thresholds-from-a-measured-baseline.md).
 7. **Attribute the client before counting or blocking sources.** When the proxy is behind a CDN, its access log records the CDN address rather than the client address until it reads the header carrying the real client address. Until then, every source count and every source-based block is silently wrong. Logging continues, so the system can appear to work while attributing traffic to the wrong source. This is an owner-supplied lesson, not an independently verified configuration change.
 
 These lessons guide the [roadmap](roadmap.md). Observation provenance and the distinction between current design and plans are in the [scope](scope.md).

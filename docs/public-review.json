@@ -34,7 +34,7 @@
     "docs/adr/007-authenticated-origin-leg.md": "cb9d08b668d912ff3fcfb1fed00b99b1c368b21d0e7593d8bd6c5fede954b7de",
     "docs/adr/008-single-observability-console.md": "18cb65620f9ec4b919a7482addcb62daefd4c6ef8e02d0586d2d6d567a8fece4",
     "docs/adr/009-proxy-edge-blocking.md": "c07bf69c6a156d2b86a871c87fe8d95a70dd3e48966246d54c04430632acd9f6",
-    "docs/adr/010-thresholds-from-a-measured-baseline.md": "20025fb917ddbcc195adca8a1fc640ae9967dfe4fc3fd5c8376864c93bf25e6b",
+    "docs/adr/010-thresholds-from-a-measured-baseline.md": "6dceea5347dffa0267c6a00ebd953c4624735c5da37d4e36a7442f544595dd47",
     "docs/adr/README.md": "c75cf51f1679219083954da3571b0dcfc33a8785b8005f1a864e3209984fd74f",
     "docs/diagrams.md": "fab6d5742f2e57698a69f36510f0bfcd8650d499649e32174247114ff45b6bf9",
     "docs/lessons-learned.md": "88b99e5b6d75890c3962d85becab86228e202bcdc3560559b271c12d9d2779ab",

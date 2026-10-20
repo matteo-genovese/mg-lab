@@ -8,7 +8,7 @@ Status: **Accepted** · Decision date: **2026-10-19**
 
 ## Decision
 
-**Observed, 2026-10-19:** The owner reports replacing default console thresholds with thresholds chosen by measuring the same event source each rule queries. Count events in windows matching the rule's duration, then place the threshold above the ninetieth percentile and below the observed maximum. Traffic spread across sources does not warrant frequent alerts. A different event, one persistent source, warrants a rare alert and has a separate rule. This replaces the initial-threshold limit recorded in [ADR 008](008-single-observability-console.md).
+**Observed, 2026-10-19:** The owner reports replacing default console thresholds with thresholds chosen by measuring the same event source each rule queries. Count events in windows matching the rule's duration, then place the threshold above the observed maximum, so that ordinary traffic cannot reach it. **Corrected 2026-10-20:** the first version of this decision placed the threshold between the ninetieth percentile and the maximum; applied to the ban rule it fired about three times a day, because that band is the upper tail of normal traffic, not an anomaly. Traffic spread across sources does not warrant frequent alerts. A different event, one persistent source, warrants a rare alert and has a separate rule. This replaces the initial-threshold limit recorded in [ADR 008](008-single-observability-console.md).
 
 ## Consequences and accepted limits
 

@@ -10,3 +10,4 @@
 - [008 · One observability console, with an independent witness](008-single-observability-console.md)
 - [009 · Block at the edge without host root privileges](009-proxy-edge-blocking.md)
 - [010 · Choose alert thresholds from a measured baseline](010-thresholds-from-a-measured-baseline.md)
+- [011 · Move public HTTP ingress behind an outbound tunnel, one vhost at a time](011-tunnel-public-http-ingress.md)

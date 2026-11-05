@@ -1,6 +1,6 @@
 {
   "source": "Supplied public architecture context, source observations, local Docker count snapshot, and owner dashboard observation. Dates and screenshot provenance are recorded in docs/scope.md.",
-  "review": "Local v6 review, 2026-11-05: ADR 011 extended with the customer-domain cutover. Superseded and corrected statements are marked inline rather than deleted, so the earlier reasoning stays auditable. No provider name, address or operational URL added.",
+  "review": "Local v7 review, 2026-11-05: ADR 011 records the tunnel scoping by host boundary. No provider name, address or operational URL added.",
   "files": {
     ".gitignore": "b3f0384d259ee99d312fc2a6f5c15e7510914aa00690e84961cef8c803051a77",
     "LICENSE": "0eac2e74b4174694a4d27d096c0d4da1be4e5f27cae4a40b518d2466aba1e9ce",
@@ -35,7 +35,7 @@
     "docs/adr/008-single-observability-console.md": "18cb65620f9ec4b919a7482addcb62daefd4c6ef8e02d0586d2d6d567a8fece4",
     "docs/adr/009-proxy-edge-blocking.md": "c07bf69c6a156d2b86a871c87fe8d95a70dd3e48966246d54c04430632acd9f6",
     "docs/adr/010-thresholds-from-a-measured-baseline.md": "6dceea5347dffa0267c6a00ebd953c4624735c5da37d4e36a7442f544595dd47",
-    "docs/adr/011-tunnel-public-http-ingress.md": "d28d817dffc8d3e4b37b6ef7baf0fb629f6b67cf6d6f6a87e3fba75d2e510f99",
+    "docs/adr/011-tunnel-public-http-ingress.md": "ef549b34972d52bd03fcc5d3044349aaba7985f4626c41b1baf94c3928e51b34",
     "docs/adr/README.md": "ce49836b9bb5f74266ac8ee94fe86b416cd9cea175ae66a7f8709a9c19b87686",
     "docs/diagrams.md": "fab6d5742f2e57698a69f36510f0bfcd8650d499649e32174247114ff45b6bf9",
     "docs/lessons-learned.md": "88b99e5b6d75890c3962d85becab86228e202bcdc3560559b271c12d9d2779ab",

@@ -38,6 +38,13 @@ Migrate one public vhost first. Accept the change only if, measured from an exte
 
 **Observed:** the listener binding is not a security boundary on this host. Publishing on all interfaces and closing the ports at the network provider produced the same external result as a narrow binding, and the narrow binding broke the overlay-only names because the overlay address stopped being in the listening set. A container published on a specific interface address also fails to start when that address does not exist yet, and its restart policy does not retry it. The accepted configuration is therefore: publish broadly, filter at the network edge, and treat the host filter as defence in depth rather than as the primary control.
 
+**Observed:** tunnels are scoped by host boundary, not by zone. A connector reaches
+only the origins on its own machine, so the services that live on the home host
+(a personal site and an assistant interface, both on loopback) use a second
+tunnel with their own rules. A single tunnel for everything would require every
+rule to address the other host over the overlay, and every connector to reach
+every origin, for no gain: if a host is down its services are down either way.
+
 **Observed:** the accepted cost is now a single entry path for customer domains. A connector outage takes them down, with no direct fallback, whereas before the migration the public port was an alternative path.
 
 **Unverified, 2026-11-05:** whether the application rejects an unknown `Host` value; a local probe returned a normal response for an arbitrary name, so the application's own routing is the only thing standing between a spoofed host and a tenant page.

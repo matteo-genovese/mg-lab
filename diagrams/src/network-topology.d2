@@ -40,8 +40,8 @@ home: "HOME" {
 }
 cloud: "CLOUD · MICRO VMs" {
   class: group
-  mgmt: "mg-mgmt-01\nManagement VM\nPortainer · Beszel Hub" {class: control; width: 320; height: 125}
-  mon: "mg-mon-01\nMonitoring VM\nUptime Kuma" {class: monitor; width: 320; height: 125; style.font-color: "#ffffff"}
+  mgmt: "mg-mgmt-01\nManagement VM\nPortainer" {class: control; width: 320; height: 125}
+  mon: "mg-mon-01\nMonitoring VM\nUptime Kuma · Beszel Hub" {class: monitor; width: 320; height: 125; style.font-color: "#ffffff"}
 }
 internet -> vps.prod: "Public applications" {class: public}
 users -> home.node: "Local DNS" {class: local}

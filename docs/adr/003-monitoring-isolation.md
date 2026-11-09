@@ -4,7 +4,9 @@ Status: **Accepted**
 
 ## Context
 
-Portainer and Beszel share the management VM; Kuma runs on another cloud VM.
+Portainer runs on the management VM; Kuma and the Beszel hub run on another cloud VM.
+
+**Corrected 2026-11-09:** the Beszel hub no longer shares the management VM. It was moved to the monitoring VM, so the two concerns this decision separates are now split by host as well as by purpose. The original wording described the state until that date.
 
 ## Decision
 
